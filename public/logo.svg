@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" role="img" aria-labelledby="title">
+  <title id="title">Remplacez ce logo par le vôtre</title>
+  <rect x="4" y="4" width="232" height="152" rx="24" fill="#e5eee8"/>
+  <circle cx="120" cy="68" r="32" fill="#5c9276"/>
+  <path d="M104 70c10-22 28-22 34-16-3 16-15 29-34 29-7 0-12-5-12-11 0-5 4-9 12-12Z" fill="#fff"/>
+  <text x="120" y="132" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#315341">VOTRE LOGO</text>
+</svg>
