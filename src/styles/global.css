@@ -1,2 +1,75 @@
 :root{font-family:Arial,Helvetica,sans-serif;color:#101a22;background:#f5f4f0;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0}.site-header{height:82px;background:#10171d;color:white;display:flex;align-items:center;padding:0 4%;gap:30px;border-bottom:1px solid #9da0a2}.brand{display:block;flex:0 0 370px}.brand img{width:100%;height:auto;display:block}.main-nav{display:flex;align-items:center;justify-content:center;gap:clamp(15px,2.3vw,38px);flex:1}.main-nav a,.languages a{font-size:12px;color:#fff;text-decoration:none;text-transform:uppercase;white-space:nowrap;letter-spacing:.04em}.main-nav a{height:82px;display:flex;align-items:center;position:relative}.main-nav a:hover:after,.main-nav a.active:after{content:"";position:absolute;bottom:20px;left:0;right:0;height:3px;background:#d32032}.languages{display:flex;align-items:center;gap:14px}.languages span{height:19px;border-left:1px solid #aaa}.menu-toggle{display:none}.hero{min-height:460px;position:relative;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(7,14,19,.97) 0%,rgba(7,14,19,.82) 27%,rgba(7,14,19,.16) 63%,rgba(7,14,19,.05)),url('/images/moto-guzzi-v100-route.webp') center center/cover}.hero-copy{max-width:650px;padding:48px 4%}.hero h1{font-size:clamp(36px,4vw,58px);line-height:.98;margin:0 0 20px;font-weight:800;letter-spacing:.015em}.red-rule{width:57px;height:4px;background:#d82035;margin:18px 0}.hero h2{font-size:23px;line-height:1.15;margin:0 0 12px}.hero p{font-size:16px;line-height:1.42;max-width:535px;margin:0}.compatible{margin-top:24px;text-transform:uppercase;letter-spacing:.11em;font-size:15px}.compatible b{display:block;margin-top:5px;font-size:18px}.country-note{position:absolute;right:4%;top:42px;text-transform:uppercase;text-align:center;font-size:14px;line-height:1.4}.flag{display:flex;width:130px;height:8px;margin:12px auto;background:linear-gradient(90deg,#1e4d8a 33%,white 33% 66%,#d51f32 66%)}.benefits{display:grid;grid-template-columns:1.18fr 1.18fr 1.18fr 2.65fr;background:#f3f1ec;min-height:292px}.benefit{padding:34px 26px 30px;border-right:1px solid #c6c4bf;align-self:center}.benefit-icon{width:86px;height:86px;border-radius:50%;background:#111a21;color:white;display:grid;place-items:center;font-size:42px;margin:0 auto 17px}.benefit h3{font-size:16px;text-transform:uppercase;margin:0 0 10px}.benefit .red-rule{margin:0 0 13px;width:36px;height:3px}.benefit p{font-size:14px;line-height:1.5;margin:0}.product-promo{background:linear-gradient(90deg,rgba(11,19,25,.1),rgba(11,19,25,.9) 46%),url('/images/voyant-warning.jpg') center center/cover;display:grid;grid-template-columns:1fr 1fr;color:#fff;align-items:center;padding:36px 5% 36px 43%}.product-promo h3{font-size:18px;text-transform:uppercase;margin:0}.product-promo p{font-size:14px;line-height:1.6}.product-promo ul{padding:0;list-style:none;font-size:14px;line-height:2}.product-promo li:before{content:'✓';color:#e12638;font-size:20px;font-weight:bold;margin-right:12px}.product-promo a,.button{display:inline-block;padding:13px 20px;border:1px solid white;color:#fff;text-decoration:none;text-transform:uppercase;font-size:13px;letter-spacing:.04em}.site-footer{min-height:160px;background:linear-gradient(110deg,#0d151b,#20282c);display:flex;align-items:center;justify-content:space-between;padding:30px 4%;color:#fff}.footer-points{display:flex;align-items:center;flex:1}.footer-points>div{display:flex;align-items:center;gap:16px;padding:0 26px;border-right:1px solid #9da3a7}.footer-points>div:first-child{padding-left:0}.footer-points p{margin:0;text-transform:uppercase;font-size:13px}.footer-points small{display:block;text-transform:none;font-size:11px;margin-top:6px;color:#d5d8da}.footer-icon{font-size:36px}.footer-logo{width:210px}.page-intro{padding:92px 7%;min-height:55vh;background:linear-gradient(120deg,#10171d,#26333b);color:white}.page-intro h1{font-size:clamp(36px,5vw,62px);text-transform:uppercase;margin:0}.page-intro p{font-size:18px;color:#d8dce0}.page-space{height:28vh;background:#f3f1ec}@media(max-width:1050px){.site-header{gap:16px}.brand{flex-basis:260px}.main-nav{gap:14px}.main-nav a{font-size:10px}.benefits{grid-template-columns:repeat(3,1fr)}.product-promo{grid-column:1/-1;min-height:300px;padding-left:45%}.footer-points>div{padding:0 13px}.footer-logo{width:160px}}@media(max-width:760px){.site-header{height:72px;padding:0 20px;justify-content:space-between}.brand{flex:0 1 250px}.menu-toggle{display:block;background:none;border:0;color:white;font-size:27px}.main-nav{display:none;position:absolute;z-index:5;top:72px;left:0;right:0;background:#10171d;padding:10px 22px 22px;align-items:stretch;flex-direction:column}.main-nav.open{display:flex}.main-nav a{height:auto;padding:12px 0;font-size:13px}.main-nav a:hover:after,.main-nav a.active:after{bottom:4px;right:auto;width:40px}.languages{display:none}.hero{min-height:570px;background-position:57% center}.hero-copy{padding:50px 24px}.hero h1{font-size:40px}.hero p{font-size:15px}.country-note{display:none}.benefits{grid-template-columns:1fr}.benefit{padding:25px 28px;border-right:0;border-bottom:1px solid #ccc}.benefit-icon{margin:0 0 14px;width:65px;height:65px;font-size:32px}.product-promo{grid-template-columns:1fr;padding:260px 26px 30px;background-position:48% 72%}.site-footer{align-items:flex-start;gap:28px;flex-direction:column}.footer-points{display:grid;grid-template-columns:1fr 1fr;gap:20px}.footer-points>div{border:0;padding:0}.footer-logo{align-self:flex-end}.page-intro{padding:70px 24px}}
 
+
+
+
+/* Bloc Made in France */
+.hero {
+  position: relative;
+}
+
+.made-in-france {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  z-index: 2;
+  width: 165px;
+  padding: 8px 0 8px 15px;
+  border-left: 1px solid rgba(255,255,255,.7);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.made-in-france-text {
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.french-flag {
+  width: 135px;
+  height: 8px;
+  margin-top: 8px;
+  background: linear-gradient(
+    to right,
+    #0055a4 0%,
+    #0055a4 33.33%,
+    #fff 33.33%,
+    #fff 66.66%,
+    #ef3340 66.66%,
+    #ef3340 100%
+  );
+}
+
+.france-map {
+  display: block;
+  width: 58px;
+  height: 65px;
+  margin: 15px auto 0;
+}
+
+/* Adaptation smartphone */
+@media (max-width: 768px) {
+  .made-in-france {
+    top: 12px;
+    right: 12px;
+    width: 115px;
+    padding-left: 8px;
+  }
+
+  .made-in-france-text {
+    font-size: 10px;
+  }
+
+  .french-flag {
+    width: 95px;
+    height: 6px;
+  }
+
+  .france-map {
+    width: 42px;
+    height: 48px;
+    margin-top: 8px;
+  }
+}
