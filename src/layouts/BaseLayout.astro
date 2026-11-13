@@ -12,14 +12,14 @@ import '../styles/global.css';
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Weasy Rider, accueil"><img src="/images/logo-weasy-rider.svg" alt="Weasy Rider — accessoires intelligents pour motards" /></a>
+      <a class="brand" href="/" aria-label="Weasy Rider, accueil"><img src="/images/logo-weasy-rider.png" alt="Weasy Rider — accessoires intelligents pour motards" /></a>
       <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="main-nav" aria-label="Navigation principale">
         <a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Accueil</a><a href="/produits/">Nos produits</a><a href="/compatibilite/">Compatibilité</a><a href="/installation/">Installation</a><a href="/a-propos/">À propos</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
       </nav><div class="languages"><a href="/" aria-label="Français">FR</a><span></span><a href="/it/" aria-label="Italiano">IT</a></div>
     </header>
     <slot />
-    <footer class="site-footer"><div class="footer-points"><div><span class="footer-icon">♧</span><p><b>Livraison rapide</b><small>Expédition depuis la France</small></p></div><div><span class="footer-icon">▤</span><p><b>Paiement sécurisé</b><small>Carte bancaire, PayPal…</small></p></div><div><span class="footer-icon">⌖</span><p><b>Fabrication française</b><small>Le cœur du kit</small></p></div><div><span class="footer-icon">⬡</span><p><b>Garantie</b><small>Support Weasy Rider</small></p></div></div><img class="footer-logo" src="/images/logo-weasy-rider.svg" alt="Weasy Rider" /></footer>
+    <footer class="site-footer"><div class="footer-points"><div><span class="footer-icon">♧</span><p><b>Livraison rapide</b><small>Expédition depuis la France</small></p></div><div><span class="footer-icon">▤</span><p><b>Paiement sécurisé</b><small>Carte bancaire, PayPal…</small></p></div><div><span class="footer-icon">⌖</span><p><b>Fabrication française</b><small>Le cœur du kit</small></p></div><div><span class="footer-icon">⬡</span><p><b>Garantie</b><small>Support Weasy Rider</small></p></div></div><img class="footer-logo" src="/images/logo-weasy-rider.png" alt="Weasy Rider" /></footer>
     <script>
       const toggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.main-nav');
@@ -27,3 +27,4 @@ import '../styles/global.css';
     </script>
   </body>
 </html>
+
