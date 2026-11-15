@@ -16,9 +16,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="hero-copy"><h1>Le warning automatique.<br />Simplement.</h1><div class="red-rule"></div><h2>Vous décidez.<br />Weasy Rider automatise.</h2><p>Le pilote active manuellement le warning. Lorsque les clignotants sont utilisés, le warning se coupe temporairement puis reprend automatiquement à l’arrêt des clignotants. Vous gardez le contrôle en toute circonstance.</p><p class="warranty-note">Vous ne modifiez pas le circuit électrique de votre moto, vous conservez la garantie constructeur.</p><div class="compatible">Compatible avec <b>V100 Mandello　·　V100 Stelvio　·　V7</b></div></div>
     </section>
     <section class="benefits" aria-label="Les avantages Weasy Rider">
-      <article class="benefit"><div class="benefit-icon">☝</div><h3>Activation manuelle</h3><div class="red-rule"></div><p>C’est vous qui décidez quand les warnings doivent fonctionner.</p></article>
-      <article class="benefit"><div class="benefit-icon">↔</div><h3>Gestion automatique</h3><div class="red-rule"></div><p>Les clignotants coupent les warnings, qui se réactivent automatiquement quand vous stoppez les clignotants.</p></article>
-      <article class="benefit"><div class="benefit-icon">♢</div><h3>Maîtrise conservée</h3><div class="red-rule"></div><p>Le pilote reste en contrôle à tout moment.</p></article>
+      <div class="benefits-list">
+        <article class="benefit"><div class="benefit-icon">☝</div><h3>Activation manuelle</h3><div class="red-rule"></div><p>C’est vous qui décidez quand les warnings doivent fonctionner.</p></article>
+        <article class="benefit"><div class="benefit-icon">↔</div><h3>Gestion automatique</h3><div class="red-rule"></div><p>Les clignotants coupent les warnings, qui se réactivent automatiquement quand vous stoppez les clignotants.</p></article>
+        <article class="benefit"><div class="benefit-icon">♢</div><h3>Maîtrise conservée</h3><div class="red-rule"></div><p>Le pilote reste en contrôle à tout moment.</p></article>
+      </div>
       <div class="product-promo"><div class="product-promo-photo"><div class="warning-image">
           <img src="/images/tableau-de-bord-v100.webp" alt="Tableau de bord de la Moto Guzzi V100 Mandello" width="1024" height="683" />
           <div class="warning-demo" aria-hidden="true">
@@ -30,7 +32,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <button type="button" data-direction aria-label="Clignotant droit">→</button>
           </div>
           </div><p class="warning-help" aria-live="polite">Appuyez sur ← ou →, puis rapidement sur ●.</p>
-        </div><div><h3>Un voyant LED<br />discret et efficace</h3><div class="red-rule"></div><p>Le voyant de warning est situé dans le carénage, face au pilote, pour une visibilité optimale sans gêner votre champ de vision.</p><div class="red-rule"></div><p>Visible. Sans distraction.</p></div><div><h3>Un kit complet et spécifique pour votre Moto Guzzi</h3><ul><li>Module électronique</li><li>Faisceau spécifique</li><li>Connecteurs adaptés</li><li>Notice d’installation</li></ul><a href="/produits/">Découvrir le kit　→</a></div></div>
+        </div><div class="product-promo-copy"><div><h3>Un voyant LED<br />discret et efficace</h3><div class="red-rule"></div><p>Le voyant de warning est situé dans le carénage, face au pilote, pour une visibilité optimale sans gêner votre champ de vision.</p><div class="red-rule"></div><p>Visible. Sans distraction.</p></div><div><h3>Un kit complet et spécifique pour votre Moto Guzzi</h3><ul><li>Module électronique</li><li>Faisceau spécifique</li><li>Connecteurs adaptés</li><li>Notice d’installation</li></ul><a href="/produits/">Découvrir le kit　→</a></div></div></div>
     </section>
   </main>
 </BaseLayout>
