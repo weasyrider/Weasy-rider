@@ -218,3 +218,5 @@
 @media (max-width: 380px) {
   .compatible b { font-size: 14px; letter-spacing: .04em; }
 }
+
+.warning-help .warning-click { color: #ff5959; }

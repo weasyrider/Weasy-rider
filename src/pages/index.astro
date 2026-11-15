@@ -32,7 +32,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <button type="button" data-reset aria-label="Reset du clignotant">●</button>
             <button type="button" data-direction aria-label="Clignotant droit">→</button>
           </div>
-          </div><p class="warning-help" aria-live="polite">Appuyez sur ← ou →, puis rapidement sur ●.</p>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Cliquez</strong> sur ← ou →, puis rapidement sur ●.</p>
         </div><div class="product-promo-copy"><div><h3>Un voyant LED<br />discret et efficace</h3><div class="red-rule"></div><p>Le voyant de warning est situé dans le carénage, face au pilote, pour une visibilité optimale sans gêner votre champ de vision.</p><div class="red-rule"></div><p>Visible. Sans distraction.</p></div><div><h3>Un kit complet et spécifique pour votre Moto Guzzi</h3><ul><li>Module électronique</li><li>Faisceau spécifique</li><li>Connecteurs adaptés</li><li>Notice d’installation</li></ul><a href="/produits/">Découvrir le kit　→</a></div></div></div>
     </section>
   </main>
@@ -70,9 +70,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       direction.addEventListener('click', () => {
         lastDirection = performance.now();
         clearTimeout(timeout);
-        help.textContent = 'Appuyez sur ●.';
+        help.innerHTML = '<strong class="warning-click">Cliquez</strong> sur ●.';
         timeout = window.setTimeout(() => {
-          help.textContent = 'Cliquez sur ← ou →, puis rapidement sur ●.';
+          help.innerHTML = '<strong class="warning-click">Cliquez</strong> sur ← ou →, puis rapidement sur ●.';
         }, gestureWindow);
       });
     }
@@ -83,7 +83,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       clearTimeout(timeout);
       active = !active;
       lamp.classList.toggle('is-blinking', active);
-      help.textContent = active ? 'Warning actif. Répétez le geste pour l’arrêter.' : 'Warning arrêté. Appuyez sur ← ou →, puis sur ●.';
+      help.innerHTML = active ? 'Warning actif. Répétez le geste pour l’arrêter.' : 'Warning arrêté. <strong class="warning-click">Cliquez</strong> sur ← ou →, puis sur ●.';
     });
   }
 </script>
