@@ -19,7 +19,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <article class="benefit"><div class="benefit-icon">☝</div><h3>Activation manuelle</h3><div class="red-rule"></div><p>C’est vous qui décidez quand les warnings doivent fonctionner.</p></article>
       <article class="benefit"><div class="benefit-icon">↔</div><h3>Gestion automatique</h3><div class="red-rule"></div><p>Les clignotants coupent les warnings, qui se réactivent automatiquement quand vous stoppez les clignotants.</p></article>
       <article class="benefit"><div class="benefit-icon">♢</div><h3>Maîtrise conservée</h3><div class="red-rule"></div><p>Le pilote reste en contrôle à tout moment.</p></article>
-      <div class="product-promo"><div><h3>Un voyant LED<br />discret et efficace</h3><div class="red-rule"></div><p>Le voyant de warning est situé dans le carénage, face au pilote, pour une visibilité optimale sans gêner votre champ de vision.</p><div class="red-rule"></div><p>Visible. Sans distraction.</p></div><div><h3>Un kit complet et spécifique pour votre Moto Guzzi</h3><ul><li>Module électronique</li><li>Faisceau spécifique</li><li>Connecteurs adaptés</li><li>Notice d’installation</li></ul><a href="/produits/">Découvrir le kit　→</a></div></div>
+      <div class="product-promo"><div class="product-promo-photo"><div class="warning-image">
+          <img src="/images/tableau-de-bord-v100.webp" alt="Tableau de bord de la Moto Guzzi V100 Mandello" width="1024" height="683" />
+          <div class="warning-demo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4 21 20H3Z M12 9v5 M12 16v1" /></svg>
+          </div>
+          <div class="warning-controls" role="group" aria-label="Commodo de clignotants">
+            <button type="button" data-direction aria-label="Clignotant gauche">←</button>
+            <button type="button" data-reset aria-label="Reset du clignotant">●</button>
+            <button type="button" data-direction aria-label="Clignotant droit">→</button>
+          </div>
+          </div><p class="warning-help" aria-live="polite">Appuyez sur ← ou →, puis rapidement sur ●.</p>
+        </div><div><h3>Un voyant LED<br />discret et efficace</h3><div class="red-rule"></div><p>Le voyant de warning est situé dans le carénage, face au pilote, pour une visibilité optimale sans gêner votre champ de vision.</p><div class="red-rule"></div><p>Visible. Sans distraction.</p></div><div><h3>Un kit complet et spécifique pour votre Moto Guzzi</h3><ul><li>Module électronique</li><li>Faisceau spécifique</li><li>Connecteurs adaptés</li><li>Notice d’installation</li></ul><a href="/produits/">Découvrir le kit　→</a></div></div>
     </section>
   </main>
 </BaseLayout>
@@ -43,3 +54,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
   }
 </style>
+<script>
+  for (const demo of document.querySelectorAll('.product-promo-photo')) {
+    const lamp = demo.querySelector('.warning-demo');
+    const help = demo.querySelector('.warning-help');
+    let lastDirection = -Infinity;
+    let active = false;
+    let timeout = 0;
+    const gestureWindow = 1000;
+
+    for (const direction of demo.querySelectorAll('[data-direction]')) {
+      direction.addEventListener('click', () => {
+        lastDirection = performance.now();
+        clearTimeout(timeout);
+        help.textContent = 'Appuyez sur ●.';
+        timeout = window.setTimeout(() => {
+          help.textContent = 'Appuyez sur ← ou →, puis rapidement sur ●.';
+        }, gestureWindow);
+      });
+    }
+
+    demo.querySelector('[data-reset]').addEventListener('click', () => {
+      if (performance.now() - lastDirection > gestureWindow) return;
+      lastDirection = -Infinity;
+      clearTimeout(timeout);
+      active = !active;
+      lamp.classList.toggle('is-blinking', active);
+      help.textContent = active ? 'Warning actif. Répétez le geste pour l’arrêter.' : 'Warning arrêté. Appuyez sur ← ou →, puis sur ●.';
+    });
+  }
+</script>
