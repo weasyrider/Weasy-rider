@@ -220,3 +220,21 @@
 }
 
 .warning-help .warning-click { color: #ff5959; }
+
+.warning-test-callout {
+  position: absolute;
+  top: calc(78% + 16px);
+  left: 3%;
+  display: flex;
+  align-items: center;
+  gap: .3em;
+  padding: 0 .35em;
+  border-radius: 3px;
+  background: #fff;
+  color: #101a22;
+  font-size: clamp(10px, 1.3vw, 14px);
+  font-weight: 700;
+  line-height: 1.35;
+  pointer-events: none;
+}
+.warning-test-callout span { color: #d32032; font-size: 1.2em; }
