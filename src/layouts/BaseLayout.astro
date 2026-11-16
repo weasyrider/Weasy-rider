@@ -1,6 +1,8 @@
 ---
 const { lang = "fr", title = 'Weasy Rider', description = 'Accessoires intelligents pour motards.' } = Astro.props;
 import '../styles/global.css';
+const prefix = lang === 'it' ? '/it' : '';
+const frenchPath = Astro.url.pathname.replace(/^\/it(?=\/|$)/, '') || '/';
 ---
 <!doctype html>
 <html lang={lang}>
@@ -15,8 +17,8 @@ import '../styles/global.css';
       <a class="brand" href={lang === "it" ? "/it/" : "/"} aria-label={lang === "it" ? "Weasy Rider, home" : "Weasy Rider, accueil"}><img src="/images/logo-original.jpg" alt={lang === "it" ? "Weasy Rider — accessori intelligenti per motociclisti" : "Weasy Rider — accessoires intelligents pour motards"} /></a>
       <button class="menu-toggle" aria-label={lang === "it" ? "Apri il menu" : "Ouvrir le menu"} aria-expanded="false">☰</button>
       <nav class="main-nav" aria-label={lang === "it" ? "Navigazione principale" : "Navigation principale"}>
-        <a href={lang === "it" ? "/it/" : "/"} class={Astro.url.pathname === (lang === 'it' ? '/it/' : '/') ? 'active' : ''}>{lang === 'it' ? 'Home' : 'Accueil'}</a><a href="/produits/">{lang === 'it' ? 'I nostri prodotti' : 'Nos produits'}</a><a href="/compatibilite/">{lang === 'it' ? 'Compatibilità' : 'Compatibilité'}</a><a href="/installation/">{lang === 'it' ? 'Installazione' : 'Installation'}</a><a href="/a-propos/">{lang === 'it' ? 'Chi siamo' : 'À propos'}</a><a href="/faq/">FAQ</a><a href="/contact/">{lang === 'it' ? 'Contatti' : 'Contact'}</a>
-      </nav><div class="languages"><a href="/" aria-label="Français">FR</a><span></span><a href="/it/" aria-label="Italiano">IT</a></div>
+        <a href={lang === "it" ? "/it/" : "/"} class={Astro.url.pathname === (lang === 'it' ? '/it/' : '/') ? 'active' : ''}>{lang === 'it' ? 'Home' : 'Accueil'}</a><a href={prefix + "/produits/"}>{lang === 'it' ? 'I nostri prodotti' : 'Nos produits'}</a><a href={prefix + "/compatibilite/"}>{lang === 'it' ? 'Compatibilità' : 'Compatibilité'}</a><a href={prefix + "/installation/"}>{lang === 'it' ? 'Installazione' : 'Installation'}</a><a href={prefix + "/a-propos/"}>{lang === 'it' ? 'Chi siamo' : 'À propos'}</a><a href={prefix + "/faq/"}>FAQ</a><a href={prefix + "/contact/"}>{lang === 'it' ? 'Contatti' : 'Contact'}</a>
+      </nav><div class="languages"><a href={frenchPath} aria-label="Français">FR</a><span></span><a href={"/it" + frenchPath} aria-label="Italiano">IT</a></div>
     </header>
     <slot />
     <footer class="site-footer"><div class="footer-points"><div><span class="footer-icon">♧</span><p><b>{lang === 'it' ? 'Spedizione rapida' : 'Livraison rapide'}</b><small>{lang === 'it' ? 'Spedizione dalla Francia' : 'Expédition depuis la France'}</small></p></div><div><span class="footer-icon">▤</span><p><b>{lang === 'it' ? 'Pagamento sicuro' : 'Paiement sécurisé'}</b><small>{lang === 'it' ? 'Carta, PayPal…' : 'Carte bancaire, PayPal…'}</small></p></div><div><span class="footer-icon"><img src="/images/france.svg" alt="France" /></span><p><b>{lang === 'it' ? 'Fabbricazione francese' : 'Fabrication française'}</b><small>{lang === 'it' ? 'Il cuore del kit' : 'Le cœur du kit'}</small></p></div><div><span class="footer-icon">⬡</span><p><b>{lang === 'it' ? 'Garanzia' : 'Garantie'}</b><small>{lang === 'it' ? 'Assistenza Weasy Rider' : 'Support Weasy Rider'}</small></p></div></div><img class="footer-logo" src="/images/logo-original.jpg" alt="Weasy Rider" /></footer>
