@@ -5,7 +5,7 @@ const prefix = lang === 'it' ? '/it' : '';
 const frenchPath = Astro.url.pathname.replace(/^\/it(?=\/|$)/, '') || '/';
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} translate={lang === "it" ? "no" : undefined} class={lang === "it" ? "notranslate" : undefined}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
