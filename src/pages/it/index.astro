@@ -1,6 +1,89 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Italiano" description="Versione italiana del sito Weasy Rider in preparazione.">
-  <main><section class="page-intro"><h1>Versione italiana in arrivo</h1><p>La presentazione in italiano sarà presto disponibile.</p><a class="button" href="/">Torna alla home</a></section><div class="page-space"></div></main>
+<BaseLayout lang="it" title="Home" description="Quattro frecce automatiche per la tua Moto Guzzi. Tu decidi, Weasy Rider automatizza.">
+  <main>
+    <section class="hero">
+<div class="made-in-france">
+  <div class="made-in-france-text">
+    IL CUORE DEL KIT<br />
+    È MADE IN FRANCE
+  </div>
+  <div class="french-flag"></div>
+ <img class="france-map" src="/images/france.svg" alt="Mappa della Francia" />
+</div>
+
+      <div class="hero-copy"><h1>Quattro frecce automatiche.<br />Semplicemente.</h1><div class="red-rule"></div><h2>Tu decidi.<br />Weasy Rider automatizza.</h2><p>Il pilota attiva manualmente le quattro frecce. Quando si usano gli indicatori di direzione, le quattro frecce si disattivano temporaneamente e si riattivano automaticamente quando si spegne l’indicatore. Mantieni il controllo in ogni situazione.</p><p class="warranty-note">Il circuito elettrico della moto resta intatto e la garanzia del costruttore rimane valida.</p><div class="compatible">Compatibile con <b><span class="compatible-models"><span>V100 Mandello</span><span aria-hidden="true">·</span><span>V100 Stelvio</span></span> <span class="compatible-v7">V7 (in fase di sviluppo)</span></b></div></div>
+    </section>
+    <section class="benefits" aria-label="I vantaggi di Weasy Rider">
+      <div class="benefits-list">
+        <h2 class="benefits-title">La magia del kit Weasy Rider</h2>
+        <article class="benefit"><div class="benefit-icon">☝</div><h3>Attivazione manuale</h3><div class="red-rule"></div><p>Decidi tu quando attivare le quattro frecce.</p></article>
+        <article class="benefit"><div class="benefit-icon">↔</div><h3>Gestione automatica</h3><div class="red-rule"></div><p>Gli indicatori di direzione interrompono le quattro frecce, che si riattivano automaticamente quando spegni l’indicatore.</p></article>
+        <article class="benefit"><div class="benefit-icon">♢</div><h3>Sempre sotto controllo</h3><div class="red-rule"></div><p>Mantieni sempre il controllo della moto.</p></article>
+      </div>
+      <div class="product-promo"><div class="product-promo-photo"><div class="warning-image">
+          <img src="/images/tableau-de-bord-v100.webp" alt="Cruscotto della Moto Guzzi V100 Mandello" width="1024" height="683" />
+          <div class="warning-demo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4 21 20H3Z M12 9v5 M12 16v1" /></svg>
+          </div>
+          <div class="warning-controls" role="group" aria-label="Comando degli indicatori di direzione">
+            <button type="button" data-direction aria-label="Indicatore sinistro">←</button>
+            <button type="button" data-reset aria-label="Disattiva l’indicatore">●</button>
+            <button type="button" data-direction aria-label="Indicatore destro">→</button>
+          </div>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Fai clic</strong> su ← o →, poi subito su ●.</p>
+        </div><div class="product-promo-copy"><div><h3>Una spia LED<br />discreta ed efficace</h3><div class="red-rule"></div><p>La spia delle quattro frecce è integrata nella carenatura, davanti al pilota, per essere ben visibile e lasciare libero il campo visivo.</p><div class="red-rule"></div><p>Visibile senza distrazioni.</p></div><div><h3>Un kit completo dedicato alla tua Moto Guzzi</h3><ul><li>Modulo elettronico</li><li>Cablaggio dedicato</li><li>Connettori compatibili</li><li>Istruzioni di montaggio</li></ul><a href="/produits/">Scopri il kit　→</a></div></div></div>
+    </section>
+  </main>
 </BaseLayout>
+
+
+<style>
+  .warranty-note {
+    color: #ff5959;
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .warranty-note {
+      animation: warranty-blink 1.5s ease-in-out 10;
+    }
+  }
+
+  @keyframes warranty-blink {
+    50% {
+      opacity: 0.55;
+    }
+  }
+</style>
+<script>
+  for (const demo of document.querySelectorAll('.product-promo-photo')) {
+    const lamp = demo.querySelector('.warning-demo');
+    const help = demo.querySelector('.warning-help');
+    let lastDirection = -Infinity;
+    let active = false;
+    let timeout = 0;
+    const gestureWindow = 1000;
+
+    for (const direction of demo.querySelectorAll('[data-direction]')) {
+      direction.addEventListener('click', () => {
+        lastDirection = performance.now();
+        clearTimeout(timeout);
+        help.innerHTML = '<strong class="warning-click">Fai clic</strong> su ●.';
+        timeout = window.setTimeout(() => {
+          help.innerHTML = '<strong class="warning-click">Fai clic</strong> su ← o →, poi subito su ●.';
+        }, gestureWindow);
+      });
+    }
+
+    demo.querySelector('[data-reset]').addEventListener('click', () => {
+      if (performance.now() - lastDirection > gestureWindow) return;
+      lastDirection = -Infinity;
+      clearTimeout(timeout);
+      active = !active;
+      lamp.classList.toggle('is-blinking', active);
+      help.innerHTML = active ? 'Quattro frecce attive. Ripeti il gesto per spegnerle.' : 'Quattro frecce disattivate. <strong class="warning-click">Fai clic</strong> su ← o →, poi su ●.';
+    });
+  }
+</script>
