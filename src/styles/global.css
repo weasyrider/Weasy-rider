@@ -107,10 +107,9 @@
   background: #141517;
   padding: 1px;
   fill: none;
-  stroke: #ff3844;
+  stroke: #702329;
   stroke-width: 2;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px #ff3844);
 }
 .warning-demo.is-blinking svg {
   animation: warning-blink 1s steps(1) infinite;
