@@ -238,4 +238,33 @@
   line-height: 1.35;
   pointer-events: none;
 }
-.warning-test-callout span { color: #d32032; font-size: 1.65em; line-height: 1; }
+.warning-test-callout span {
+  position: relative;
+  display: block;
+  align-self: center;
+  width: 18px;
+  height: clamp(25px, 4vw, 44px);
+  color: #d32032;
+  font-size: 0;
+}
+.warning-test-callout span::before,
+.warning-test-callout span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+}
+.warning-test-callout span::before {
+  top: 0;
+  bottom: 5px;
+  width: 3px;
+  transform: translateX(-50%);
+  background: currentColor;
+}
+.warning-test-callout span::after {
+  bottom: 0;
+  width: 11px;
+  height: 11px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: translateX(-50%) rotate(45deg);
+}
