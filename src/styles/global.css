@@ -89,8 +89,8 @@
 }
 .warning-demo {
   position: absolute;
-  top: 42.7%;
-  left: 35.1%;
+  top: 55.6%;
+  left: 24%;
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
@@ -107,15 +107,15 @@
   background: #141517;
   padding: 1px;
   fill: none;
-  stroke: #ff3844;
+  stroke: #702329;
   stroke-width: 2;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px #ff3844);
 }
 .warning-demo.is-blinking svg {
   animation: warning-blink 1s steps(1) infinite;
 }
 @keyframes warning-blink {
+  0%, 100% { stroke: #ff626c; filter: drop-shadow(0 0 3px #ff3844); }
   50% { stroke: #702329; filter: none; }
 }
 @media (prefers-reduced-motion: reduce) {
