@@ -223,7 +223,7 @@
 
 .warning-test-callout {
   position: absolute;
-  top: calc(78% + 16px);
+  top: 3%;
   left: 3%;
   display: flex;
   align-items: center;
