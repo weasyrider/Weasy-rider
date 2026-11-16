@@ -226,15 +226,16 @@
   top: 3%;
   left: 3%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: .3em;
+  gap: .05em;
   padding: 0 .35em;
   border-radius: 3px;
   background: #fff;
   color: #101a22;
-  font-size: clamp(10px, 1.3vw, 14px);
+  font-size: clamp(12px, 1.5vw, 17px);
   font-weight: 700;
   line-height: 1.35;
   pointer-events: none;
 }
-.warning-test-callout span { color: #d32032; font-size: 1.2em; }
+.warning-test-callout span { color: #d32032; font-size: 1.65em; line-height: 1; }
