@@ -268,3 +268,5 @@
   border-bottom: 3px solid currentColor;
   transform: translateX(-50%) rotate(45deg);
 }
+
+.warning-test-callout span + span { height: clamp(19px, 3vw, 32px); }
