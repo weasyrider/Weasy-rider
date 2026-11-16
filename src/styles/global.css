@@ -116,6 +116,7 @@
   animation: warning-blink 1s steps(1) infinite;
 }
 @keyframes warning-blink {
+  0%, 100% { stroke: #ff626c; filter: drop-shadow(0 0 3px #ff3844); }
   50% { stroke: #702329; filter: none; }
 }
 @media (prefers-reduced-motion: reduce) {
