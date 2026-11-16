@@ -269,4 +269,4 @@
   transform: translateX(-50%) rotate(45deg);
 }
 
-.warning-test-callout span + span { height: clamp(19px, 3vw, 32px); }
+.warning-test-callout span + span { margin-top: 6px; height: clamp(19px, 3vw, 32px); }
