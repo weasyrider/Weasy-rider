@@ -89,8 +89,8 @@
 }
 .warning-demo {
   position: absolute;
-  top: 42.7%;
-  left: 35.1%;
+  top: 55.6%;
+  left: 24%;
   transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
