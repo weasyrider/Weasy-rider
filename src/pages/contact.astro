@@ -14,11 +14,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       style="display: block; width: 100%; height: 700px; border: 0;"
     ></iframe>
 
-    <div class="page-space"></div>
+    <section class="legal-notice" aria-labelledby="legal-notice">
+      <h2 id="legal-notice">Mentions légales</h2>
+      <p><strong>Éditeur du site</strong> · Monique Petitjean EI</p>
+      <p><strong>SIRET</strong> · 78990595700021</p>
+      <p><strong>Assurance de l’entreprise</strong> · MAAF</p>
+      <p><strong>Hébergeur</strong> · Sevalla (Kinsta, Inc.)</p>
+      <address>
+        8605 Santa Monica Blvd #92581<br />
+        West Hollywood, CA 90069, États-Unis<br />
+        <a href="tel:+18886102915">+1 (888) 610-2915</a><br />
+        <a href="https://sevalla.com/contact/">Contacter Sevalla</a>
+      </address>
+    </section>
   </main>
 </BaseLayout>
 
 <style>
+  .legal-notice {
+    padding: 2rem 7%;
+    line-height: 1.5;
+  }
+
+  .legal-notice h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+  }
+
+  .legal-notice p {
+    margin: .35rem 0;
+  }
+
+  .legal-notice address { font-style: normal; }
+  .legal-notice a { color: inherit; }
+
   .page-intro .partner-note {
     color: #73e69c;
     font-size: 20px;
