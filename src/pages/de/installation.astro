@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const resources = [
+  {
+    "label": "Einbauvideo für V100 / V100S",
+    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQC8G9doZgOjSJleeHURmKXNAXdWGlCF5ZlBIPxkLNF8YXM?e=Zernm9",
+    "image": "/installation/qr/video-v100-v100s.png"
+  },
+  {
+    "label": "Einbauvideo für V100 Stelvio",
+    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQB7GjG168i8SKdhm9utEGH3AYd1oGvUzeBC83bxWlGw5gM?e=hNKAFg",
+    "image": "/installation/qr/video-stelvio.png"
+  },
+  {
+    "label": "Einbauanleitung für V100 / V100S (PDF, Französisch)",
+    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQAszhxJQEQvSZSsozeYlzllAQZG22OJDgqqRyvh1YoyPlg?e=jmsfyB",
+    "image": "/installation/qr/notice-v100-v100s-fr.png"
+  },
+  {
+    "label": "Einbauanleitung für V100 / V100S (PDF, Englisch)",
+    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQAsnSKQqg3JSpZt8rmytViEAYM5JBWjp_lbyHYHg5xIEwQ?e=vUeDnI",
+    "image": "/installation/qr/notice-v100-v100s-en.png"
+  },
+  {
+    "label": "So funktioniert WR / WAM",
+    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQC5GsIQBHhySb14GlyqPHTWAZW7x0YW-GH1s_ivRoLEjWU?e=o7sTca",
+    "image": "/installation/qr/video-wr-wam.png"
+  },
+  {
+    "label": "Einbauanleitung für V100 Stelvio (PDF, Französisch)",
+    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQDsKhCPzMdTSIQeFeUbbC87AYBuB_8xL7ocHCAbPZfb8sU?e=jUbyVI",
+    "image": "/installation/qr/notice-stelvio-fr.png"
+  },
+  {
+    "label": "Einbauanleitung für V100 Stelvio (PDF, Englisch)",
+    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQBCtMrmnYizRJaJjq3tT6SNAeu0qh-YugXjXUvrFfSS3UM?e=QQRYBH",
+    "image": "/installation/qr/notice-stelvio-en.png"
+  }
+];
+---
+<BaseLayout lang="de" title="Einbau" description="Hier findest du Anleitungen und Tipps zum Einbau deines Kits.">
+  <main><section class="page-intro"><h1>Einbau</h1><p>Hier findest du Anleitungen und Tipps zum Einbau deines Kits.</p><p><a href="https://1drv.ms/b/c/1d7f64182a1ca064/IQDjIfoamSbKR5Ks5ppw5BlbAYvDRrnxAs6kjk5bbhg10YI?e=N4NdVI">Kurzanleitung für den Einbau der V100 öffnen (PDF, Französisch)</a></p></section>
+    <section class="installation-resources" aria-labelledby="installation-resources">
+      <h2 id="installation-resources">Einbauvideos und Anleitungen</h2>
+      <ul>
+        {resources.map(({ label, href, image }) => (
+          <li>
+            <a href={href}>
+              <img src={image} alt="" width="180" loading="lazy" />
+              <span>{label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+    <div class="page-space"></div></main>
+</BaseLayout>
+
+
+<style>
+  main a, main a:visited {
+    color: #ff5959;
+  }
+
+  .installation-resources {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+  a {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem;
+    border: 1px solid currentColor;
+    border-radius: .5rem;
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    background: white;
+    padding: .25rem;
+  }
+</style>

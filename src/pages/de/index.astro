@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="de" title="Startseite" description="Automatisches Warnblinklicht für deine Moto Guzzi. Du entscheidest, wann du es einschaltest.">
+  <main>
+    <section class="hero">
+<div class="made-in-france">
+  <div class="made-in-france-text">
+    DAS HERZSTÜCK DES KITS<br />
+    WIRD IN FRANKREICH GEFERTIGT
+  </div>
+  <div class="french-flag"></div>
+ <img class="france-map" src="/images/france.svg" alt="Karte von Frankreich" />
+</div>
+
+      <div class="hero-copy"><h1>Automatisches Warnblinklicht.<br />Ganz einfach.</h1><div class="red-rule"></div><h2>Du entscheidest.<br />Weasy Rider erledigt den Rest.</h2><p>Du schaltest das Warnblinklicht manuell ein. Beim Blinken wird es vorübergehend unterbrochen und nach dem Ausschalten des Blinkers automatisch wieder aktiviert. Du behältst jederzeit die Kontrolle.</p><p class="warranty-note">Die Originalverkabelung deines Motorrads bleibt unverändert und die Herstellergarantie erhalten.</p><div class="compatible">Kompatibel mit <b><span class="compatible-models"><span>V100 Mandello</span><span aria-hidden="true">·</span><span>V100 Stelvio</span></span> <span class="compatible-v7">V7 (in Entwicklung)</span></b></div></div>
+    </section>
+    <section class="benefits" aria-label="Die Vorteile von Weasy Rider">
+      <div class="benefits-list">
+        <h2 class="benefits-title">Die Magie des Weasy Rider Kits</h2>
+        <article class="benefit"><div class="benefit-icon">☝</div><h3>Manuell einschalten</h3><div class="red-rule"></div><p>Du entscheidest, wann das Warnblinklicht eingeschaltet wird.</p></article>
+        <article class="benefit"><div class="benefit-icon">↔</div><h3>Automatischer Betrieb</h3><div class="red-rule"></div><p>Beim Blinken wird das Warnblinklicht unterbrochen. Nach dem Ausschalten des Blinkers wird es automatisch wieder aktiviert.</p></article>
+        <article class="benefit"><div class="benefit-icon">♢</div><h3>Alles unter Kontrolle</h3><div class="red-rule"></div><p>Du behältst jederzeit die Kontrolle.</p></article>
+      </div>
+      <div class="product-promo"><div class="product-promo-photo"><div class="warning-image">
+          <img src="/images/tableau-de-bord-v100.webp" alt="Cockpit der Moto Guzzi V100 Mandello" width="1024" height="683" />
+          <div class="warning-demo" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 4 21 20H3Z M12 9v5 M12 16v1" /></svg>
+          </div>
+          <div class="warning-controls" role="group" aria-label="Blinkerschalter">
+            <button type="button" data-direction aria-label="Linker Blinker">←</button>
+            <button type="button" data-reset aria-label="Blinker ausschalten">●</button>
+            <button type="button" data-direction aria-label="Rechter Blinker">→</button>
+          </div>
+          <div class="warning-test-callout" aria-hidden="true">Hier ausprobieren<span>↓</span><span>↓</span></div>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Klicke</strong> auf ← oder →, dann gleich auf ●.</p>
+        </div><div class="product-promo-copy"><div><h3>Eine LED-Kontrollleuchte<br />dezent und wirkungsvoll</h3><div class="red-rule"></div><p>Die Warnblink-Kontrollleuchte sitzt in der Verkleidung im Blickfeld des Fahrers. Sie ist gut sichtbar und lässt die Sicht auf die Straße frei.</p><div class="red-rule"></div><p>Gut sichtbar, ohne Ablenkung.</p></div><div><h3>Ein komplettes Kit für deine Moto Guzzi</h3><ul><li>Elektronikmodul</li><li>Modellspezifischer Kabelbaum</li><li>Passende Steckverbinder</li><li>Einbauanleitung</li></ul><a href="/de/produits/">Kit entdecken　→</a></div></div></div>
+    </section>
+  </main>
+</BaseLayout>
+
+
+<style>
+  .warranty-note {
+    color: #ff5959;
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .warranty-note {
+      animation: warranty-blink 1.5s ease-in-out 10;
+    }
+  }
+
+  @keyframes warranty-blink {
+    50% {
+      opacity: 0.55;
+    }
+  }
+</style>
+<script>
+  for (const demo of document.querySelectorAll('.product-promo-photo')) {
+    const lamp = demo.querySelector('.warning-demo');
+    const help = demo.querySelector('.warning-help');
+    let lastDirection = -Infinity;
+    let active = false;
+    let timeout = 0;
+    const gestureWindow = 1000;
+
+    for (const direction of demo.querySelectorAll('[data-direction]')) {
+      direction.addEventListener('click', () => {
+        lastDirection = performance.now();
+        clearTimeout(timeout);
+        help.innerHTML = '<strong class="warning-click">Klicke</strong> auf ●.';
+        timeout = window.setTimeout(() => {
+          help.innerHTML = '<strong class="warning-click">Klicke</strong> auf ← oder →, dann gleich auf ●.';
+        }, gestureWindow);
+      });
+    }
+
+    demo.querySelector('[data-reset]').addEventListener('click', () => {
+      if (performance.now() - lastDirection > gestureWindow) return;
+      lastDirection = -Infinity;
+      clearTimeout(timeout);
+      active = !active;
+      lamp.classList.toggle('is-blinking', active);
+      help.innerHTML = active ? 'Warnblinklicht eingeschaltet. Zum Ausschalten die Bedienfolge wiederholen.' : 'Warnblinklicht ausgeschaltet. <strong class="warning-click">Klicke</strong> auf ← oder →, dann auf ●.';
+    });
+  }
+</script>
