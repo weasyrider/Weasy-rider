@@ -389,5 +389,6 @@
 .warning-controls [data-direction],
 .warning-help .warning-direction {
   font-weight: 900;
-  text-shadow: .4px 0 currentColor, -.4px 0 currentColor;
+  -webkit-text-stroke: 1px currentColor;
+  text-shadow: .6px 0 currentColor, -.6px 0 currentColor;
 }
