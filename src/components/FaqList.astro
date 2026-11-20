@@ -3,13 +3,14 @@ interface FaqItem {
   question: string;
   answer: string;
   highlight?: string;
+  additionalLinks?: { href: string; label: string }[];
   href: string | null;
   linkLabel: string | null;
 }
 const { items } = Astro.props as { items: FaqItem[] };
 ---
 <div class="faq-list">
-  {items.map(({ question, answer, highlight, href, linkLabel }) => (
+  {items.map(({ question, answer, highlight, href, linkLabel, additionalLinks }) => (
     <details class="faq-item">
       <summary>{question}</summary>
       <div class="faq-answer">
@@ -19,6 +20,7 @@ const { items } = Astro.props as { items: FaqItem[] };
           ))
           : answer}</p>
         {href !== null && <a href={href}>{linkLabel}</a>}
+        {additionalLinks?.map(link => <div><a href={link.href}>{link.label}</a></div>)}
       </div>
     </details>
   ))}
