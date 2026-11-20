@@ -233,8 +233,8 @@
   border-radius: 3px;
   background: #fff;
   color: #101a22;
-  font-size: clamp(12px, 1.5vw, 17px);
-  font-weight: 700;
+  font-size: clamp(14px, 1.7vw, 20px);
+  font-weight: 900;
   line-height: 1.35;
   pointer-events: none;
 }
