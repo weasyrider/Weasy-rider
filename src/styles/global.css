@@ -289,7 +289,7 @@
 .order-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .main-nav .nav-order { color: #ff5959; font-weight: 700; }
 .order-form {
-  padding: 32px 7%;
+  padding: 16px 7% 32px;
   background: #10171d;
   color: #fff;
   scroll-margin-top: 16px;
