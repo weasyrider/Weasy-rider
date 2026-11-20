@@ -1,6 +1,7 @@
 ---
 const { lang = "fr", title = 'Weasy Rider', description = 'Accessoires intelligents pour motards.' } = Astro.props;
 import '../styles/global.css';
+import languagePreference from '../scripts/language-preference.js?raw';
 const prefix = lang === 'fr' ? '' : '/' + lang;
 const frenchPath = Astro.url.pathname.replace(/^\/(?:it|en|de)(?=\/|$)/, '') || '/';
 ---
@@ -9,6 +10,7 @@ const frenchPath = Astro.url.pathname.replace(/^\/(?:it|en|de)(?=\/|$)/, '') || 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline set:html={languagePreference} />
     <meta name="description" content={description} />
     <title>{title} | Weasy Rider</title>
   </head>
@@ -18,7 +20,7 @@ const frenchPath = Astro.url.pathname.replace(/^\/(?:it|en|de)(?=\/|$)/, '') || 
       <button class="menu-toggle" aria-label={lang === "de" ? "Menü öffnen" : lang === "en" ? "Open menu" : lang === "it" ? "Apri il menu" : "Ouvrir le menu"} aria-expanded="false">☰</button>
       <nav class="main-nav" aria-label={lang === "de" ? "Hauptnavigation" : lang === "en" ? "Main navigation" : lang === "it" ? "Navigazione principale" : "Navigation principale"}>
         <a href={prefix + "/"} class={Astro.url.pathname === (prefix + '/') ? 'active' : ''}>{lang === 'de' ? 'Startseite' : lang === 'en' ? 'Home' : lang === 'it' ? 'Home' : 'Accueil'}</a><a href={prefix + "/produits/"}>{lang === 'de' ? 'Unsere Produkte' : lang === 'en' ? 'Our products' : lang === 'it' ? 'I nostri prodotti' : 'Nos produits'}</a><a href={prefix + "/compatibilite/"}>{lang === 'de' ? 'Kompatibilität' : lang === 'en' ? 'Compatibility' : lang === 'it' ? 'Compatibilità' : 'Compatibilité'}</a><a href={prefix + "/installation/"}>{lang === 'de' ? 'Einbau' : lang === 'en' ? 'Installation' : lang === 'it' ? 'Installazione' : 'Installation'}</a><a href={prefix + "/a-propos/"}>{lang === 'de' ? 'Über uns' : lang === 'en' ? 'About us' : lang === 'it' ? 'Chi siamo' : 'À propos'}</a><a href={prefix + "/faq/"}>FAQ</a><a class="nav-order" href={prefix + "/contact/#haut-de-page"}>{lang === 'de' ? 'Bestellen / Kontakt' : lang === 'en' ? 'Order / Contact' : lang === 'it' ? 'Ordini / Contatti' : 'Commander / Contact'}</a>
-      </nav><div class="languages"><a href={frenchPath} aria-label="Français">FR</a><span></span><a href={"/it" + frenchPath} aria-label="Italiano">IT</a><span></span><a href={"/en" + frenchPath} aria-label="English">EN</a><span></span><a href={"/de" + frenchPath} aria-label="Deutsch">DE</a></div>
+      </nav><div class="languages"><a href={frenchPath === '/' ? '/?lang=fr' : frenchPath} data-site-language="fr" aria-label="Français">FR</a><span></span><a href={"/it" + frenchPath} data-site-language="it" aria-label="Italiano">IT</a><span></span><a href={"/en" + frenchPath} data-site-language="en" aria-label="English">EN</a><span></span><a href={"/de" + frenchPath} data-site-language="de" aria-label="Deutsch">DE</a></div>
     </header>
     <slot />
     <footer class="site-footer"><div class="footer-points"><div><span class="footer-icon">♧</span><p><b>{lang === 'de' ? 'Schnelle Lieferung' : lang === 'en' ? 'Fast delivery' : lang === 'it' ? 'Spedizione rapida' : 'Livraison rapide'}</b><small>{lang === 'de' ? 'Versand aus Frankreich' : lang === 'en' ? 'Ships from France' : lang === 'it' ? 'Spedizione dalla Francia' : 'Expédition depuis la France'}</small></p></div><div><span class="footer-icon">▤</span><p><b>{lang === 'de' ? 'Sichere Zahlung' : lang === 'en' ? 'Secure payment' : lang === 'it' ? 'Pagamento sicuro' : 'Paiement sécurisé'}</b><small>{lang === 'de' ? 'Karte, PayPal…' : lang === 'en' ? 'Card, PayPal…' : lang === 'it' ? 'Carta, PayPal…' : 'Carte bancaire, PayPal…'}</small></p></div><div><span class="footer-icon"><img src="/images/france.svg" alt={lang === "de" ? "Frankreich" : "France"} /></span><p><b>{lang === 'de' ? 'Gefertigt in Frankreich' : lang === 'en' ? 'Made in France' : lang === 'it' ? 'Fabbricazione francese' : 'Fabrication française'}</b><small>{lang === 'de' ? 'Das Herzstück des Kits' : lang === 'en' ? 'The heart of the kit' : lang === 'it' ? 'Il cuore del kit' : 'Le cœur du kit'}</small></p></div><div><span class="footer-icon">⬡</span><p><b>{lang === 'de' ? 'Garantie' : lang === 'en' ? 'Warranty' : lang === 'it' ? 'Garanzia' : 'Garantie'}</b><small>{lang === 'de' ? 'Weasy Rider Support' : lang === 'en' ? 'Weasy Rider support' : lang === 'it' ? 'Assistenza Weasy Rider' : 'Support Weasy Rider'}</small></p></div></div><img class="footer-logo" src="/images/logo-original.jpg" alt="Weasy Rider" /></footer>
