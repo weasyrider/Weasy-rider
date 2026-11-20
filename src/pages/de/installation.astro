@@ -41,6 +41,7 @@ const resources = [
 ---
 <BaseLayout lang="de" title="Einbau" description="Hier findest du Anleitungen und Tipps zum Einbau deines Kits.">
   <main><section class="page-intro"><h1>Einbau</h1><p>Hier findest du Anleitungen und Tipps zum Einbau deines Kits.</p><p><a href="/ManuelCompactWR_V100_DE.pdf">Kurzanleitung für den Einbau der V100 auf Deutsch öffnen (PDF)</a></p><p><a href="/ManuelCompactWR_V100Stelvio_DE.pdf">V100 Stelvio-Kurzanleitung auf Deutsch öffnen (PDF)</a></p></section>
+    <section class="installation-video" aria-labelledby="installation-video-title"><h2 id="installation-video-title">Einbau an V100 / V100S — deutsche Untertitel</h2><video controls playsinline preload="metadata" width="854" height="564"><source src="/videos/installation-v100s-de-sub.mp4" type="video/mp4" /></video></section>
     <section class="installation-resources" aria-labelledby="installation-resources">
       <h2 id="installation-resources">Einbauvideos und Anleitungen</h2>
       <ul>
@@ -59,6 +60,8 @@ const resources = [
 
 
 <style>
+  .installation-video { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
+  .installation-video video { display: block; width: 100%; max-width: 854px; height: auto; background: #000; }
   main a, main a:visited {
     color: #ff5959;
   }
