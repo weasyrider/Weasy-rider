@@ -231,7 +231,7 @@
   gap: .05em;
   padding: 0 .35em;
   border-radius: 3px;
-  background: #fff;
+  background: transparent;
   color: #101a22;
   font-size: clamp(14px, 1.7vw, 20px);
   font-weight: 900;
@@ -336,4 +336,24 @@
   margin-top: 10px;
   transform: rotate(22deg);
   transform-origin: top center;
+}
+
+@media (max-width: 760px) {
+  .warning-image { container-type: inline-size; }
+  .warning-test-callout {
+    padding: 0;
+    font-size: clamp(10px, 3cqw, 14px);
+    white-space: nowrap;
+  }
+  .warning-test-callout span {
+    height: 4.5cqw;
+  }
+  .warning-test-callout span + span {
+    height: 3.5cqw;
+    margin-top: 3px;
+  }
+  .warning-test-callout span.warning-test-diagonal {
+    height: 5cqw;
+    margin-top: 4px;
+  }
 }
