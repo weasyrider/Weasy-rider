@@ -2,17 +2,22 @@
 interface FaqItem {
   question: string;
   answer: string;
+  highlight?: string;
   href: string | null;
   linkLabel: string | null;
 }
 const { items } = Astro.props as { items: FaqItem[] };
 ---
 <div class="faq-list">
-  {items.map(({ question, answer, href, linkLabel }) => (
+  {items.map(({ question, answer, highlight, href, linkLabel }) => (
     <details class="faq-item">
       <summary>{question}</summary>
       <div class="faq-answer">
-        <p>{answer}</p>
+        <p>{highlight
+          ? answer.split(highlight).map((part, index) => (
+            <>{index > 0 && <span class="faq-highlight">{highlight}</span>}{part}</>
+          ))
+          : answer}</p>
         {href !== null && <a href={href}>{linkLabel}</a>}
       </div>
     </details>
@@ -46,6 +51,7 @@ const { items } = Astro.props as { items: FaqItem[] };
   summary:hover { color: #a61223; }
   summary:focus-visible { outline: 2px solid #a61223; outline-offset: 4px; }
   .faq-answer { padding: 0 0 24px; line-height: 1.65; }
+  .faq-highlight { color: #c4162a; }
   .faq-answer p { margin: 0 0 12px; }
   .faq-answer a { color: #a61223; font-weight: 700; text-underline-offset: 3px; }
   @media (max-width: 760px) {
