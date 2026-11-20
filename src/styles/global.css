@@ -289,13 +289,13 @@
 .order-button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .main-nav .nav-order { color: #ff5959; font-weight: 700; }
 .order-form {
-  padding: 16px 7% 32px;
+  padding: 0 7% 32px;
   background: #10171d;
   color: #fff;
   scroll-margin-top: 16px;
 }
-.order-form h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 36px); }
-.order-form .form-help { margin: 0 0 24px; font-size: 18px; line-height: 1.5; }
+
+.order-form iframe { scroll-margin-top: 16px; }
 
 @media (min-width: 761px) and (max-width: 1200px) {
   .site-header { gap: 12px; justify-content: space-between; }
