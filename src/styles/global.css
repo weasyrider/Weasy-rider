@@ -383,7 +383,9 @@
   pointer-events: none;
 }
 @media (max-width: 760px) {
-  .product-promo-photo .warning-help { margin-top: 36px; }
+  .product-promo-photo .warning-help { margin-top: 12px; }
+  .warning-controls-with-pointers button::before,
+  .warning-controls-with-pointers button::after { top: calc(100% + 10px); }
 }
 
 .warning-controls [data-direction],
