@@ -385,3 +385,9 @@
 @media (max-width: 760px) {
   .product-promo-photo .warning-help { margin-top: 36px; }
 }
+
+.warning-controls [data-direction],
+.warning-help .warning-direction {
+  font-weight: 900;
+  text-shadow: .4px 0 currentColor, -.4px 0 currentColor;
+}
