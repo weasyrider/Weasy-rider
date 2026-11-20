@@ -2,6 +2,37 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="À propos" description="Weasy Rider imagine des accessoires utiles, conçus pour les motards.">
-  <main><section class="page-intro"><h1>À propos</h1><p>Weasy Rider imagine des accessoires utiles, conçus pour les motards.</p><p>Une équipe de 2 guzzistes passionnés du <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, et des partenaires très engagés.</p></section><div class="page-space"></div></main>
+  <main><section class="page-intro"><h1>À propos</h1><p>Weasy Rider imagine des accessoires utiles, conçus pour les motards.</p><p>Une équipe de 2 guzzistes passionnés du <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, et des partenaires très engagés.</p></section>
+    <section class="legal-notice" aria-labelledby="legal-notice">
+      <h2 id="legal-notice">Mentions légales</h2>
+      <p><strong>Coordonnées de l’entreprise / éditeur du site</strong> · Monique Petitjean EI</p>
+      <p><strong>Adresse de l’entreprise</strong> · 63 rue Pierre Jouhet, 93600 Aulnay-sous-Bois</p>
+      <p><strong>Téléphone</strong> · +33 6 83 73 14 56</p>
+      <p><strong>E-mail de contact</strong> · contact@weasyrider.com</p>
+      <p><strong>SIRET</strong> · 78990595700021</p>
+      <p><strong>Assurance de l’entreprise</strong> · MAAF, contrat MCE001</p>
+      <p><strong>Hébergeur</strong> · Sevalla (Kinsta, Inc.)</p>
+      <address>
+        8605 Santa Monica Blvd #92581<br />
+        West Hollywood, CA 90069, États-Unis<br />
+        <a href="tel:+18886102915">+1 (888) 610-2915</a><br />
+        <a href="https://sevalla.com/contact/">Contacter Sevalla</a>
+      </address>
+    </section>
+</main>
 </BaseLayout>
-
+<style>
+  .legal-notice {
+    padding: 2rem 7%;
+    line-height: 1.5;
+  }
+  .legal-notice h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+  }
+  .legal-notice p {
+    margin: .35rem 0;
+  }
+  .legal-notice address { font-style: normal; }
+  .legal-notice a { color: inherit; }
+</style>

@@ -2,5 +2,37 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout lang="de" title="Über uns" description="Weasy Rider entwickelt praktisches Zubehör für Motorradfahrer.">
-  <main><section class="page-intro"><h1>Über uns</h1><p>Weasy Rider entwickelt praktisches Zubehör für Motorradfahrer.</p><p>Ein Team aus zwei begeisterten Guzzisti aus dem <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a> und engagierten Partnern.</p></section><div class="page-space"></div></main>
+  <main><section class="page-intro"><h1>Über uns</h1><p>Weasy Rider entwickelt praktisches Zubehör für Motorradfahrer.</p><p>Ein Team aus zwei begeisterten Guzzisti aus dem <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a> und engagierten Partnern.</p></section>
+    <section class="legal-notice" aria-labelledby="legal-notice">
+      <h2 id="legal-notice">Impressum</h2>
+      <p><strong>Unternehmensangaben / Websitebetreiberin</strong> · Monique Petitjean EI</p>
+      <p><strong>Geschäftsanschrift</strong> · 63 rue Pierre Jouhet, 93600 Aulnay-sous-Bois</p>
+      <p><strong>Telefon</strong> · +33 6 83 73 14 56</p>
+      <p><strong>E-Mail</strong> · contact@weasyrider.com</p>
+      <p><strong>SIRET</strong> · 78990595700021</p>
+      <p><strong>Unternehmensversicherung</strong> · MAAF, Vertrag MCE001</p>
+      <p><strong>Hosting-Anbieter</strong> · Sevalla (Kinsta, Inc.)</p>
+      <address>
+        8605 Santa Monica Blvd #92581<br />
+        West Hollywood, CA 90069, USA<br />
+        <a href="tel:+18886102915">+1 (888) 610-2915</a><br />
+        <a href="https://sevalla.com/contact/">Sevalla kontaktieren</a>
+      </address>
+    </section>
+</main>
 </BaseLayout>
+<style>
+  .legal-notice {
+    padding: 2rem 7%;
+    line-height: 1.5;
+  }
+  .legal-notice h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+  }
+  .legal-notice p {
+    margin: .35rem 0;
+  }
+  .legal-notice address { font-style: normal; }
+  .legal-notice a { color: inherit; }
+</style>

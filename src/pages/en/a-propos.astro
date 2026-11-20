@@ -2,6 +2,37 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout lang="en" title="About us" description="Weasy Rider designs practical accessories for motorcyclists.">
-  <main><section class="page-intro"><h1>About us</h1><p>Weasy Rider designs practical accessories for motorcyclists.</p><p>A team of two Moto Guzzi enthusiasts from <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, and dedicated partners.</p></section><div class="page-space"></div></main>
+  <main><section class="page-intro"><h1>About us</h1><p>Weasy Rider designs practical accessories for motorcyclists.</p><p>A team of two Moto Guzzi enthusiasts from <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, and dedicated partners.</p></section>
+    <section class="legal-notice" aria-labelledby="legal-notice">
+      <h2 id="legal-notice">Legal notice</h2>
+      <p><strong>Business details / website publisher</strong> · Monique Petitjean EI</p>
+      <p><strong>Business address</strong> · 63 rue Pierre Jouhet, 93600 Aulnay-sous-Bois</p>
+      <p><strong>Phone</strong> · +33 6 83 73 14 56</p>
+      <p><strong>Contact email</strong> · contact@weasyrider.com</p>
+      <p><strong>SIRET</strong> · 78990595700021</p>
+      <p><strong>Business insurance</strong> · MAAF, policy MCE001</p>
+      <p><strong>Hosting provider</strong> · Sevalla (Kinsta, Inc.)</p>
+      <address>
+        8605 Santa Monica Blvd #92581<br />
+        West Hollywood, CA 90069, United States<br />
+        <a href="tel:+18886102915">+1 (888) 610-2915</a><br />
+        <a href="https://sevalla.com/contact/">Contact Sevalla</a>
+      </address>
+    </section>
+</main>
 </BaseLayout>
-
+<style>
+  .legal-notice {
+    padding: 2rem 7%;
+    line-height: 1.5;
+  }
+  .legal-notice h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+  }
+  .legal-notice p {
+    margin: .35rem 0;
+  }
+  .legal-notice address { font-style: normal; }
+  .legal-notice a { color: inherit; }
+</style>
