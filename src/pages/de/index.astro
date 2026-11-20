@@ -33,7 +33,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <button type="button" data-direction aria-label="Rechter Blinker">→</button>
           </div>
           <div class="warning-test-callout" aria-hidden="true">Hier ausprobieren<span>↓</span><span>↓</span><span class="warning-test-diagonal">↓</span></div>
-          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Klicke</strong> auf ← oder →, dann gleich auf ●.</p>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Klicke</strong> auf <strong class="warning-click">←</strong> oder <strong class="warning-click">→</strong>, dann gleich auf ●.</p>
         </div><div class="product-promo-copy"><div><h3>Eine LED-Kontrollleuchte<br />dezent und wirkungsvoll</h3><div class="red-rule"></div><p>Die Warnblink-Kontrollleuchte sitzt in der Verkleidung im Blickfeld des Fahrers. Sie ist gut sichtbar und lässt die Sicht auf die Straße frei.</p><div class="red-rule"></div><p>Gut sichtbar, ohne Ablenkung.</p></div><div><h3>Ein komplettes Kit für deine Moto Guzzi</h3><ul><li>Elektronikmodul</li><li>Modellspezifischer Kabelbaum</li><li>Passende Steckverbinder</li><li>Einbauanleitung</li></ul><a href="/de/produits/">Kit entdecken　→</a></div></div></div>
     </section>
   </main>
@@ -73,7 +73,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         clearTimeout(timeout);
         help.innerHTML = '<strong class="warning-click">Klicke</strong> auf ●.';
         timeout = window.setTimeout(() => {
-          help.innerHTML = '<strong class="warning-click">Klicke</strong> auf ← oder →, dann gleich auf ●.';
+          help.innerHTML = '<strong class="warning-click">Klicke</strong> auf <strong class="warning-click">←</strong> oder <strong class="warning-click">→</strong>, dann gleich auf ●.';
         }, gestureWindow);
       });
     }
@@ -84,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       clearTimeout(timeout);
       active = !active;
       lamp.classList.toggle('is-blinking', active);
-      help.innerHTML = active ? 'Warnblinklicht eingeschaltet. Zum Ausschalten die Bedienfolge wiederholen.' : 'Warnblinklicht ausgeschaltet. <strong class="warning-click">Klicke</strong> auf ← oder →, dann auf ●.';
+      help.innerHTML = active ? 'Warnblinklicht eingeschaltet. Zum Ausschalten die Bedienfolge wiederholen.' : 'Warnblinklicht ausgeschaltet. <strong class="warning-click">Klicke</strong> auf <strong class="warning-click">←</strong> oder <strong class="warning-click">→</strong>, dann auf ●.';
     });
   }
 </script>

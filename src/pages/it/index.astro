@@ -33,7 +33,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <button type="button" data-direction aria-label="Indicatore destro">→</button>
           </div>
           <div class="warning-test-callout" aria-hidden="true">Prova qui<span>↓</span><span>↓</span><span class="warning-test-diagonal">↓</span></div>
-          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Fai clic</strong> su ← o →, poi subito su ●.</p>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Fai clic</strong> su <strong class="warning-click">←</strong> o <strong class="warning-click">→</strong>, poi subito su ●.</p>
         </div><div class="product-promo-copy"><div><h3>Una spia LED<br />discreta ed efficace</h3><div class="red-rule"></div><p>La spia delle quattro frecce è integrata nella carenatura, davanti al pilota, per essere ben visibile e lasciare libero il campo visivo.</p><div class="red-rule"></div><p>Visibile senza distrazioni.</p></div><div><h3>Un kit completo dedicato alla tua Moto Guzzi</h3><ul><li>Modulo elettronico</li><li>Cablaggio dedicato</li><li>Connettori compatibili</li><li>Istruzioni di montaggio</li></ul><a href="/it/produits/">Scopri il kit　→</a></div></div></div>
     </section>
   </main>
@@ -73,7 +73,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         clearTimeout(timeout);
         help.innerHTML = '<strong class="warning-click">Fai clic</strong> su ●.';
         timeout = window.setTimeout(() => {
-          help.innerHTML = '<strong class="warning-click">Fai clic</strong> su ← o →, poi subito su ●.';
+          help.innerHTML = '<strong class="warning-click">Fai clic</strong> su <strong class="warning-click">←</strong> o <strong class="warning-click">→</strong>, poi subito su ●.';
         }, gestureWindow);
       });
     }
@@ -84,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       clearTimeout(timeout);
       active = !active;
       lamp.classList.toggle('is-blinking', active);
-      help.innerHTML = active ? 'Quattro frecce attive. Ripeti il gesto per spegnerle.' : 'Quattro frecce disattivate. <strong class="warning-click">Fai clic</strong> su ← o →, poi su ●.';
+      help.innerHTML = active ? 'Quattro frecce attive. Ripeti il gesto per spegnerle.' : 'Quattro frecce disattivate. <strong class="warning-click">Fai clic</strong> su <strong class="warning-click">←</strong> o <strong class="warning-click">→</strong>, poi su ●.';
     });
   }
 </script>
