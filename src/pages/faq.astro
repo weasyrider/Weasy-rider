@@ -1,7 +1,71 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import FaqList from '../components/FaqList.astro';
+
+const items = [
+  {
+    "question": "Comment commander mon kit ?",
+    "answer": "Remplissez le formulaire de contact en indiquant le modèle de votre moto. Nous vous répondrons rapidement pour finaliser votre commande.",
+    "href": "/contact/#haut-de-page",
+    "linkLabel": "Commander ou nous contacter"
+  },
+  {
+    "question": "Quel est le prix du kit ?",
+    "answer": "Le kit complet pour V100 Mandello ou V100 Stelvio, avec son voyant warning, est proposé au prix public de 95 €. Consultez la page Nos produits pour les détails.",
+    "href": "/produits/",
+    "linkLabel": "Voir les kits"
+  },
+  {
+    "question": "Ma Moto Guzzi est-elle compatible ?",
+    "answer": "Les kits sont disponibles pour V100 Mandello et V100 Stelvio. Le kit V7 est en développement. Vous pouvez nous contacter pour préciser votre modèle.",
+    "href": "/compatibilite/",
+    "linkLabel": "Vérifier la compatibilité"
+  },
+  {
+    "question": "Faut-il modifier le circuit électrique ?",
+    "answer": "Les kits spécifiques V100 Mandello et V100 Stelvio sont plug and play et réversibles. Leur installation laisse intact le circuit électrique d’origine de votre moto.",
+    "href": "/installation/",
+    "linkLabel": "Consulter les instructions"
+  },
+  {
+    "question": "Comment activer et arrêter le warning ?",
+    "answer": "Actionnez une fois le clignotant à gauche ou à droite, puis appuyez rapidement sur la commande centrale d’arrêt du clignotant. Répétez la même séquence pour arrêter le warning.",
+    "href": "/",
+    "linkLabel": "Essayer la démonstration sur l’accueil"
+  },
+  {
+    "question": "Que se passe-t-il quand j’utilise les clignotants ?",
+    "answer": "Le warning s’interrompt pendant l’utilisation du clignotant, puis reprend automatiquement lorsque vous arrêtez le clignotant.",
+    "href": null,
+    "linkLabel": null
+  },
+  {
+    "question": "Où trouver les notices et vidéos d’installation ?",
+    "answer": "La rubrique Installation regroupe les manuels PDF, les vidéos et leurs QR codes pour vous accompagner dans le montage.",
+    "href": "/installation/",
+    "linkLabel": "Ouvrir les notices et vidéos"
+  },
+  {
+    "question": "Le WAM convient-il aux autres marques ?",
+    "answer": "Le WAM est disponible pour les motos dépourvues de warning. Son installation nécessite alors d’intervenir sur le circuit électrique et, éventuellement, d’ajouter un bouton au guidon. Contactez-nous pour votre moto.",
+    "href": "/contact/#haut-de-page",
+    "linkLabel": "Nous poser une question"
+  }
+];
 ---
 <BaseLayout title="FAQ" description="Les réponses aux questions fréquentes sur nos produits.">
-  <main><section class="page-intro"><h1>FAQ</h1><p>Les réponses aux questions fréquentes sur nos produits.</p></section><div class="page-space"></div></main>
+  <main>
+    <section class="page-intro faq-intro">
+      <h1>FAQ</h1>
+      <p>Les réponses aux questions fréquentes sur nos produits.</p>
+    </section>
+    <FaqList items={items} />
+  </main>
 </BaseLayout>
 
+<style>
+  .page-intro.faq-intro {
+    min-height: 0;
+    padding-bottom: 40px;
+  }
+</style>

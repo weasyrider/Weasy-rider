@@ -1,7 +1,71 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqList from '../../components/FaqList.astro';
+
+const items = [
+  {
+    "question": "How do I order my kit?",
+    "answer": "Fill in the contact form and tell us your motorcycle model. We’ll get back to you shortly to finalise your order.",
+    "href": "/en/contact/#haut-de-page",
+    "linkLabel": "Order or contact us"
+  },
+  {
+    "question": "How much does the kit cost?",
+    "answer": "The complete kit for the V100 Mandello or V100 Stelvio, including the hazard light indicator, retails for €95. See our products page for details.",
+    "href": "/en/produits/",
+    "linkLabel": "View the kits"
+  },
+  {
+    "question": "Is my Moto Guzzi compatible?",
+    "answer": "Kits are available for the V100 Mandello and V100 Stelvio. The V7 kit is in development. Contact us to check your particular model.",
+    "href": "/en/compatibilite/",
+    "linkLabel": "Check compatibility"
+  },
+  {
+    "question": "Does the wiring need to be modified?",
+    "answer": "The model-specific V100 Mandello and V100 Stelvio kits are plug and play and reversible. Installation leaves the motorcycle’s original wiring intact.",
+    "href": "/en/installation/",
+    "linkLabel": "Read the instructions"
+  },
+  {
+    "question": "How do I switch the hazard lights on and off?",
+    "answer": "Operate the left or right turn signal once, then quickly press the central turn signal cancel button. Repeat the sequence to switch the hazard lights off.",
+    "href": "/en/",
+    "linkLabel": "Try the demo on the home page"
+  },
+  {
+    "question": "What happens when I use a turn signal?",
+    "answer": "The hazard lights pause while the turn signal is in use and resume automatically when you cancel it.",
+    "href": null,
+    "linkLabel": null
+  },
+  {
+    "question": "Where can I find installation manuals and videos?",
+    "answer": "The Installation section contains PDF manuals, videos and their QR codes to guide you through fitting the kit.",
+    "href": "/en/installation/",
+    "linkLabel": "Open manuals and videos"
+  },
+  {
+    "question": "Can the WAM be used on other brands?",
+    "answer": "The WAM is available for motorcycles without hazard lights. Installation then requires modifying the electrical system and may involve adding a handlebar switch. Contact us about your motorcycle.",
+    "href": "/en/contact/#haut-de-page",
+    "linkLabel": "Ask us a question"
+  }
+];
 ---
 <BaseLayout lang="en" title="FAQ" description="Answers to frequently asked questions about our products.">
-  <main><section class="page-intro"><h1>FAQ</h1><p>Answers to frequently asked questions about our products.</p></section><div class="page-space"></div></main>
+  <main>
+    <section class="page-intro faq-intro">
+      <h1>FAQ</h1>
+      <p>Answers to frequently asked questions about our products.</p>
+    </section>
+    <FaqList items={items} />
+  </main>
 </BaseLayout>
 
+<style>
+  .page-intro.faq-intro {
+    min-height: 0;
+    padding-bottom: 40px;
+  }
+</style>

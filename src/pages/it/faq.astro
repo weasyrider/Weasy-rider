@@ -1,7 +1,71 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FaqList from '../../components/FaqList.astro';
+
+const items = [
+  {
+    "question": "Come posso ordinare il mio kit?",
+    "answer": "Compila il modulo di contatto indicando il modello della tua moto. Ti risponderemo al più presto per completare l’ordine.",
+    "href": "/it/contact/#haut-de-page",
+    "linkLabel": "Ordina o contattaci"
+  },
+  {
+    "question": "Quanto costa il kit?",
+    "answer": "Il kit completo per V100 Mandello o V100 Stelvio, con la spia delle quattro frecce, ha un prezzo al pubblico di 95 €. Consulta la pagina dei prodotti per i dettagli.",
+    "href": "/it/produits/",
+    "linkLabel": "Scopri i kit"
+  },
+  {
+    "question": "La mia Moto Guzzi è compatibile?",
+    "answer": "I kit sono disponibili per V100 Mandello e V100 Stelvio. Il kit V7 è in fase di sviluppo. Contattaci per verificare il tuo modello.",
+    "href": "/it/compatibilite/",
+    "linkLabel": "Verifica la compatibilità"
+  },
+  {
+    "question": "Occorre modificare l’impianto elettrico?",
+    "answer": "I kit dedicati a V100 Mandello e V100 Stelvio sono plug and play e reversibili. L’installazione lascia intatto l’impianto elettrico originale della moto.",
+    "href": "/it/installation/",
+    "linkLabel": "Consulta le istruzioni"
+  },
+  {
+    "question": "Come si attivano e si spengono le quattro frecce?",
+    "answer": "Aziona una volta la freccia a sinistra o a destra, poi premi subito il comando centrale di annullamento. Ripeti la stessa sequenza per spegnere le quattro frecce.",
+    "href": "/it/",
+    "linkLabel": "Prova la dimostrazione nella home"
+  },
+  {
+    "question": "Cosa succede quando uso gli indicatori di direzione?",
+    "answer": "Le quattro frecce si interrompono durante l’uso dell’indicatore e riprendono automaticamente quando lo annulli.",
+    "href": null,
+    "linkLabel": null
+  },
+  {
+    "question": "Dove trovo i manuali e i video di montaggio?",
+    "answer": "La sezione Installazione raccoglie i manuali PDF, i video e i relativi codici QR per aiutarti nel montaggio.",
+    "href": "/it/installation/",
+    "linkLabel": "Apri manuali e video"
+  },
+  {
+    "question": "Il WAM è adatto anche ad altre marche?",
+    "answer": "Il WAM è disponibile per le moto sprovviste di quattro frecce. In questo caso l’installazione richiede interventi sull’impianto elettrico ed eventualmente un pulsante sul manubrio. Contattaci per la tua moto.",
+    "href": "/it/contact/#haut-de-page",
+    "linkLabel": "Fai una domanda"
+  }
+];
 ---
 <BaseLayout lang="it" title="FAQ" description="Le risposte alle domande frequenti sui nostri prodotti.">
-  <main><section class="page-intro"><h1>FAQ</h1><p>Le risposte alle domande frequenti sui nostri prodotti.</p></section><div class="page-space"></div></main>
+  <main>
+    <section class="page-intro faq-intro">
+      <h1>FAQ</h1>
+      <p>Le risposte alle domande frequenti sui nostri prodotti.</p>
+    </section>
+    <FaqList items={items} />
+  </main>
 </BaseLayout>
 
+<style>
+  .page-intro.faq-intro {
+    min-height: 0;
+    padding-bottom: 40px;
+  }
+</style>

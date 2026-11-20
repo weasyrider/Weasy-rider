@@ -1,0 +1,55 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+  href: string | null;
+  linkLabel: string | null;
+}
+const { items } = Astro.props as { items: FaqItem[] };
+---
+<div class="faq-list">
+  {items.map(({ question, answer, href, linkLabel }) => (
+    <details class="faq-item">
+      <summary>{question}</summary>
+      <div class="faq-answer">
+        <p>{answer}</p>
+        {href !== null && <a href={href}>{linkLabel}</a>}
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq-list {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  .faq-item { border-bottom: 1px solid #c6c4bf; }
+  .faq-item:first-child { border-top: 1px solid #c6c4bf; }
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+    color: #101a22;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    list-style: none;
+    cursor: pointer;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: #c4162a; font-size: 26px; flex-shrink: 0; }
+  details[open] > summary::after { content: "−"; }
+  summary:hover { color: #a61223; }
+  summary:focus-visible { outline: 2px solid #a61223; outline-offset: 4px; }
+  .faq-answer { padding: 0 0 24px; line-height: 1.65; }
+  .faq-answer p { margin: 0 0 12px; }
+  .faq-answer a { color: #a61223; font-weight: 700; text-underline-offset: 3px; }
+  @media (max-width: 760px) {
+    .faq-list { padding-inline: 24px; }
+    summary { font-size: 17px; }
+  }
+</style>
