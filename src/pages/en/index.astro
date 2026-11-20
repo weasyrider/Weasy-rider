@@ -33,7 +33,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <button type="button" data-direction aria-label="Right turn signal">→</button>
           </div>
           <div class="warning-test-callout" aria-hidden="true">Try it here<span>↓</span><span>↓</span><span class="warning-test-diagonal">↓</span></div>
-          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Click</strong> <strong class="warning-click warning-direction">←</strong> or <strong class="warning-click warning-direction">→</strong>, then quickly click ●.</p>
+          </div><p class="warning-help" aria-live="polite"><strong class="warning-click">Click</strong> <strong class="warning-click warning-direction warning-key">←</strong> or <strong class="warning-click warning-direction warning-key">→</strong>, then quickly click <span class="warning-key warning-reset-key">●</span>.</p>
         </div><div class="product-promo-copy"><div><h3>An LED indicator<br />discreet and effective</h3><div class="red-rule"></div><p>The hazard light indicator sits in the fairing facing the rider, where it is easy to see without obstructing the view.</p><div class="red-rule"></div><p>Easy to see without distraction.</p></div><div><h3>A complete kit designed for your Moto Guzzi</h3><ul><li>Electronic module</li><li>Model-specific wiring harness</li><li>Compatible connectors</li><li>Installation instructions</li></ul><a href="/en/produits/">Explore the kit　→</a></div></div></div>
     </section>
   </main>
@@ -71,9 +71,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       direction.addEventListener('click', () => {
         lastDirection = performance.now();
         clearTimeout(timeout);
-        help.innerHTML = '<strong class="warning-click">Click</strong> ●.';
+        help.innerHTML = '<strong class="warning-click">Click</strong> <span class="warning-key warning-reset-key">●</span>.';
         timeout = window.setTimeout(() => {
-          help.innerHTML = '<strong class="warning-click">Click</strong> <strong class="warning-click warning-direction">←</strong> or <strong class="warning-click warning-direction">→</strong>, then quickly click ●.';
+          help.innerHTML = '<strong class="warning-click">Click</strong> <strong class="warning-click warning-direction warning-key">←</strong> or <strong class="warning-click warning-direction warning-key">→</strong>, then quickly click <span class="warning-key warning-reset-key">●</span>.';
         }, gestureWindow);
       });
     }
@@ -84,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       clearTimeout(timeout);
       active = !active;
       lamp.classList.toggle('is-blinking', active);
-      help.innerHTML = active ? 'Hazard lights on. Repeat the sequence to switch them off.' : 'Hazard lights off. <strong class="warning-click">Click</strong> <strong class="warning-click warning-direction">←</strong> or <strong class="warning-click warning-direction">→</strong>, then click ●.';
+      help.innerHTML = active ? 'Hazard lights on. Repeat the sequence to switch them off.' : 'Hazard lights off. <strong class="warning-click">Click</strong> <strong class="warning-click warning-direction warning-key">←</strong> or <strong class="warning-click warning-direction warning-key">→</strong>, then click <span class="warning-key warning-reset-key">●</span>.';
     });
   }
 </script>
