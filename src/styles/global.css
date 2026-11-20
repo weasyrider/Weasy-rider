@@ -330,3 +330,10 @@
 @keyframes nav-order-blink {
   50% { opacity: .5; }
 }
+
+.warning-test-callout span.warning-test-diagonal {
+  height: clamp(30px, 4vw, 48px);
+  margin-top: 10px;
+  transform: rotate(22deg);
+  transform-origin: top center;
+}
