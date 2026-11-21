@@ -3,44 +3,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const resources = [
   {
-    "label": "Installation video for V100 / V100S",
-    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQC8G9doZgOjSJleeHURmKXNAXdWGlCF5ZlBIPxkLNF8YXM?e=Zernm9",
-    "image": "/installation/qr/video-v100-v100s.png"
+    "label": "Installation video for V100 / V100S (English subtitles)",
+    "href": "/vid%C3%A9os/installation-v100s-en.mp4",
+    "image": "/installation/qr/video-v100-v100s-en.png"
   },
   {
-    "label": "Installation video for V100 Stelvio",
-    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQB7GjG168i8SKdhm9utEGH3AYd1oGvUzeBC83bxWlGw5gM?e=hNKAFg",
-    "image": "/installation/qr/video-stelvio.png"
-  },
-  {
-    "label": "Installation manual for V100 / V100S (PDF, French)",
-    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQAszhxJQEQvSZSsozeYlzllAQZG22OJDgqqRyvh1YoyPlg?e=jmsfyB",
-    "image": "/installation/qr/notice-v100-v100s-fr.png"
+    "label": "Installation video for V100 Stelvio (English subtitles)",
+    "href": "/videos/installation-stelvio-en-sub.mp4",
+    "image": "/installation/qr/video-stelvio-en.png"
   },
   {
     "label": "Installation manual for V100 / V100S (PDF, English)",
-    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQAsnSKQqg3JSpZt8rmytViEAYM5JBWjp_lbyHYHg5xIEwQ?e=vUeDnI",
-    "image": "/installation/qr/notice-v100-v100s-en.png"
+    "href": "/NoticeMontageKIT_WR_V100S_EN.pdf",
+    "image": "/installation/qr/notice-v100-v100s-en-local.png"
   },
   {
-    "label": "How the WR / WAM works",
-    "href": "https://1drv.ms/v/c/1d7f64182a1ca064/IQC5GsIQBHhySb14GlyqPHTWAZW7x0YW-GH1s_ivRoLEjWU?e=o7sTca",
-    "image": "/installation/qr/video-wr-wam.png"
-  },
-  {
-    "label": "Installation manual for V100 Stelvio (PDF, French)",
-    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQDsKhCPzMdTSIQeFeUbbC87AYBuB_8xL7ocHCAbPZfb8sU?e=jUbyVI",
-    "image": "/installation/qr/notice-stelvio-fr.png"
+    "label": "How WR / WAM works (English voice)",
+    "href": "/videos/warning-en-private.mp4",
+    "image": "/installation/qr/video-wr-wam-en.png"
   },
   {
     "label": "Installation manual for V100 Stelvio (PDF, English)",
-    "href": "https://1drv.ms/b/c/1d7f64182a1ca064/IQBCtMrmnYizRJaJjq3tT6SNAeu0qh-YugXjXUvrFfSS3UM?e=QQRYBH",
-    "image": "/installation/qr/notice-stelvio-en.png"
+    "href": "/NoticeMontageKIT_WR_V100Stelvio_EN.pdf",
+    "image": "/installation/qr/notice-stelvio-en-local.png"
   }
 ];
 ---
 <BaseLayout lang="en" title="Installation" description="Find instructions and tips for installing your kit.">
   <main><section class="page-intro"><h1>Installation</h1><p>Find instructions and tips for installing your kit.</p><p><a href="/ManuelCompactWR_V100_EN.pdf">Open the V100 quick installation guide in English (PDF)</a></p><p><a href="https://1drv.ms/b/c/1d7f64182a1ca064/IQDUzTHrR5VAQop7kW4pFn58AU1WSd6VejeB69Hs4kZ-3yE?e=qT26nM">Open the V100 Stelvio compact manual in English (PDF)</a></p></section>
+    <section class="installation-video" aria-labelledby="installation-video-title">
+      <h2 id="installation-video-title">V100 / V100S installation — English subtitles</h2>
+      <video controls playsinline preload="metadata" width="854" height="480">
+        <source src="/vid%C3%A9os/installation-v100s-en.mp4" type="video/mp4" />
+      </video>
+    </section>
     <section class="installation-resources" aria-labelledby="installation-resources">
       <h2 id="installation-resources">Installation videos and manuals</h2>
       <ul>
@@ -59,6 +55,8 @@ const resources = [
 
 
 <style>
+  .installation-video { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; }
+  .installation-video video { display: block; width: 100%; max-width: 854px; height: auto; background: #000; }
   main a, main a:visited {
     color: #ff5959;
   }
