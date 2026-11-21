@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout lang="it" title="Chi siamo" description="Weasy Rider progetta accessori utili per i motociclisti.">
-  <main><section class="page-intro"><h1>Chi siamo</h1><p>Weasy Rider progetta accessori utili per i motociclisti.</p><p>Un team di due guzzisti appassionati del <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, e partner molto coinvolti.</p><p>Siamo assidui utilizzatori della bibbia del guzzista, la celebre <a href="https://www.guzzitek.org/" style="color: #ff5959">Guzzitek</a>.</p><p style="margin-top: 1.5rem">Un grandissimo grazie al nostro concessionario partner <a href="https://www.motoguzzi.com/fr_FR/dealer-locator/paris/team-urgence-bastille/" style="color: #ff5959">TEAM URGENCE Bastille</a>, per la sua calorosa accoglienza e per averci prestato le moto con cui testare i nostri prototipi di kit quattro frecce.</p></section>
+  <main><section class="page-intro"><h1>Chi siamo</h1><p>Weasy Rider progetta accessori utili per i motociclisti.</p><p>Un team di due guzzisti appassionati del <a href="https://forum.guzzi-passion.com/" style="color: #ff5959">forum.guzzi-passion.com</a>, e partner molto coinvolti.</p><p>Siamo assidui utilizzatori della bibbia del guzzista, la celebre <a href="https://www.guzzitek.org/" style="color: #ff5959">Guzzitek</a>.</p><p style="margin-top: 1.5rem">Un grandissimo grazie al nostro concessionario GUZZI partner <a href="https://www.motoguzzi.com/fr_FR/dealer-locator/paris/team-urgence-bastille/" class="partner-name" style="color: #ff5959">TEAM URGENCE Bastille</a>, per la sua calorosa accoglienza e per averci prestato le moto con cui testare i nostri prototipi di kit quattro frecce.</p></section>
     <section class="legal-notice" aria-labelledby="legal-notice">
       <h2 id="legal-notice">Informazioni legali</h2>
       <p><strong>Dati dell’impresa / editrice del sito</strong> · Monique Petitjean EI</p>
@@ -22,6 +22,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </main>
 </BaseLayout>
 <style>
+  @keyframes partner-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .2; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .partner-name { animation: partner-blink 1.5s ease-in-out 20; }
+  }
   .legal-notice {
     padding: 2rem 7%;
     line-height: 1.5;
