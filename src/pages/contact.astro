@@ -8,6 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </section>
 
     <section class="order-form" aria-label="Formulaire de contact et de commande">
+    <p class="payment-note">Nous vous répondrons très rapidement et vous informerons des possibilités de paiement : PayPal, Wero ou virement bancaire.</p>
     <iframe id="commande"
       src="https://tally.so/embed/4aJW5Y"
       title="Contacter Weasy Rider"
@@ -21,6 +22,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .payment-note {
+    margin: 0 0 20px;
+    padding: 16px 20px;
+    border-left: 3px solid #73e69c;
+    background: #ffffff08;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.6;
+  }
   .page-intro.contact-intro {
     min-height: 0;
     padding-bottom: 32px;
