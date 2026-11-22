@@ -9,6 +9,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <section class="order-form" aria-label="Formulaire de contact et de commande">
     <p class="payment-note">Après avoir envoyé le formulaire, nous vous répondrons très rapidement et vous informerons des possibilités de paiement : PayPal, Wero ou virement bancaire.</p>
+    <p class="privacy-note">Vos données servent à répondre à votre demande et à préparer votre commande. Les champs marqués d’un astérisque sont obligatoires. Pour connaître la conservation des données et exercer vos droits, consultez notre politique de confidentialité. <a href="/confidentialite/">Confidentialité</a>.</p>
     <iframe id="commande"
       src="https://tally.so/embed/4aJW5Y"
       title="Contacter Weasy Rider"
@@ -22,6 +23,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  .privacy-note { font-size: 14px; line-height: 1.6; margin: 0 0 24px; color: #d5d8da; }
+  .privacy-note a { color: #73e69c; text-underline-offset: 3px; }
   .payment-note {
     margin: 0 0 20px;
     padding: 16px 20px;

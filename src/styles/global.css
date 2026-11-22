@@ -409,3 +409,4 @@
   vertical-align: middle;
 }
 .warning-help .warning-reset-key { color: #fff; }
+.legal-footer{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;padding:18px 24px;background:#10171d;border-top:1px solid #ffffff22}.legal-footer a{color:#d5d8da;font-size:13px;text-underline-offset:4px}.legal-footer a:hover{color:#fff}
