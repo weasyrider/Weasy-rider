@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import terms from '../data/terms.json';
+interface Props {lang: keyof typeof terms}
+const {lang}=Astro.props;
+const data=terms[lang];
+---
+<BaseLayout lang={lang} title={data.title} description={data.title + ' — Weasy Rider'}>
+  <main class="terms-page">
+    <h1>{data.title}</h1>
+    <p class="updated">{data.updated}</p>
+    {data.sections.map((section)=><section>
+      <h2>{section.title}</h2>
+      {section.paragraphs.map(text=><p>{text}</p>)}
+      {section.title.startsWith('8.') && <aside class="warranty"><h3>{data.boxTitle}</h3>{data.box.split('\n').filter(Boolean).map(text=><p>{text}</p>)}</aside>}
+    </section>)}
+  </main>
+</BaseLayout>
+<style>
+.terms-page{max-width:1000px;margin:0 auto;padding:64px 28px 80px;color:#101a22;line-height:1.8;overflow-wrap:anywhere}.terms-page h1{font-size:clamp(30px,4vw,44px);line-height:1.2;margin:0 0 20px}.updated{color:#465159}.terms-page section{margin-top:34px}.terms-page h2{font-size:23px;line-height:1.4;margin:0 0 14px}.terms-page p{margin:0 0 14px;white-space:pre-line}.warranty{border:1px solid #a61223;padding:24px;margin:26px 0}.warranty h3{font-size:18px;line-height:1.4;margin:0 0 18px}@media(max-width:600px){.terms-page{padding:40px 20px 56px}.warranty{padding:16px}}
+</style>
